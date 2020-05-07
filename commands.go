@@ -2,18 +2,17 @@ package cli
 
 import "fmt"
 
-
 // Tree describes a command tree.
 type Tree struct {
 	// Fn must be type func([]string) error, Fn or Tree
-	Fn interface{}
+	Fn          interface{}
 	SubCommands Map
 }
 
 type Fn struct {
-	Fn func([]string) error
+	Fn      func([]string) error
 	MinArgs int
-	Help func([]string) error
+	Help    func([]string) error
 }
 
 // Map holds command names that map to either func([]string) error, Fn or Tree.
